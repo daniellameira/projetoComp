@@ -31,12 +31,23 @@ class Main {
 
 		        			switch (token.getType())
 		        			{
-		        			case DecafLexer.ID:
+								case DecafLexer.ID:
 		        				type = " IDENTIFIER";
 		        				break;
-						case DecafLexer.CHAR:
+						case DecafLexer.CHARLITERAL:
 		        				type = " CHARLITERAL";
 		        				break;
+                    				case DecafLexer.STRINGLITERAL:
+  		        				type = " STRINGLITERAL";
+  		        				break;
+						case DecafLexer.HEXA:
+							type = " INLITERAL";
+						case DecafLexer.NPO:
+							type = " INTLITERAL";
+						case DecafLexer.VD:
+							type = " BOOLEANLITERAL";
+						case DecafLexer.FL:
+							type = " BOOLEANLITERAL";
 		        			}
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
@@ -50,11 +61,14 @@ class Main {
         	}
         	else if (CLI.target == CLI.PARSE || CLI.target == CLI.DEFAULT)
         	{
-        		DecafLexer lexer = new DecafLexer(new ANTLRInputStream(inputStream));
-				CommonTokenStream tokens = new CommonTokenStream(lexer);
-        		DecafParser parser = new DecafParser(tokens);
+ 
+                DecafLexer lexer = new DecafLexer(new ANTLRInputStream(inputStream));
+                CommonTokenStream tokens = new CommonTokenStream(lexer);
+                DecafParser parser = new DecafParser(tokens);
                 parser.program();
-        	}
+
+
+            }
         	
         } catch(Exception e) {
         	// print the error:

@@ -102,7 +102,7 @@ NPO|
 LCURLY|'\\'|~('"'))*'"';
 
 ID: ('_'| CHARC)('_'|CHARC|NPO)*;
-WS_ : (' '|'\n'|'\t') -> skip;
+WS_ : (' ' | '\n'|'\t') -> skip;
 
 SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 

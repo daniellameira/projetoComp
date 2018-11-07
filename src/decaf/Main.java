@@ -41,19 +41,19 @@ class Main {
 
 		        			switch (token.getType())
 		        			{
-								case DecafLexer.IDENTIFIER:
+								case DecafLexer.ID:
 									type = " IDENTIFIER";
 									break;
-								case DecafLexer.CHAR_LITERAL:
+								case DecafLexer.CHARLITERAL:
 									type = " CHARLITERAL";
 									break;
-								case DecafLexer.STRING_LITERAL:
+								case DecafLexer.STRINGLITERAL:
 									type = " STRINGLITERAL";
 									break;
-								case DecafLexer.INTEGER_LITERAL:
+								case DecafLexer.NPO:
 									type = " INTLITERAL";
 									break;
-								case DecafLexer.BOOLEAN_LITERAL:
+								case DecafLexer.BL:
 									type = " BOOLEANLITERAL";
 									break;
 		        			}
